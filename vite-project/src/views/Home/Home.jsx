@@ -6,7 +6,7 @@ import style from "./Home.module.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Home = () => {
-    
+  console.log("Hola estoy aqui");
   const dispatch  = useDispatch();
   // cuando se monta , que haga el dispatch 
   // useEffect()  - useDispatch()  => son hooks 
