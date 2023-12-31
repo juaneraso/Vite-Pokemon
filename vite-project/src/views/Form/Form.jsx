@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import style from "./Form.module.css"
+import { getPokemones } from "../../redux/actions";
 
 const Form = () => {
-
+  const back = import.meta.env.VITE_APP_BACK;
   const types = [
     { name: "Normal", value: 1 },
     { name: "Fighting", value: 2 },
@@ -157,7 +158,8 @@ const Form = () => {
 
     if (Object.keys(newErrors).length === 0) {
       axios
-        .post("http://localhost:3001/pokemones", form)
+        // .post("http://localhost:3001/pokemones", form)
+        .post(`${back}/pokemones`, form)
         .then((res) => {
          alert("Pokemon creado")        
         resetForm();
